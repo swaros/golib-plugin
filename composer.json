@@ -1,0 +1,23 @@
+{
+    "name": "gorgo/golib-plugin",
+    "description": "Plugin Provider for modular PHP development.",
+    "keywords": ["plugins", "moduls"],
+    "homepage": "https://github.com/swaros/golib-plugin",
+    "authors": [
+        {
+            "name": "Thomas Ziegler",
+            "email": "tziegler@googlemail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "license": "MIT",
+    "require": {
+        "php": ">=5.3.0",
+        "gorgo/golib": "dev-master"
+    },
+    "autoload": {
+        "psr-4": {
+            "golib-plugin\\": "src/"
+        }
+    }
+}
