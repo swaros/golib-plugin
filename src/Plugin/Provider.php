@@ -73,29 +73,55 @@ abstract class Provider {
     }
 
     /**
-     * 
+     * returns the last used Methods call.
+     * willbe overwritten on any execute
      * @return array
      */
     public function getLastParams () {
         return $this->lastParams;
     }
 
+    /**
+     * constructor
+     * calls method constructor
+     */
     public function __construct () {
         $this->callPlugins( 'constructor', func_get_args() );
     }
 
+    /**
+     * destructor
+     * calls method destructor
+     */
     public function __destruct () {
         $this->callPlugins( 'destruct', func_get_args() );
     }
 
+    /**
+     * checks by a name if this plugin
+     * is already registered
+     * @param string $name name of the plugin
+     * @return boolean
+     */
     public function pluginRegistered ( $name ) {
         return (isset( self::$staticPlugins[$name] ) || isset( $this->plugins[$name] ));
     }
 
+    /**
+     * returns the countof registered plugins
+     * @return int
+     */
     public function pluginsCount () {
         return count( $this->plugins ) + count( self::$staticPlugins );
     }
 
+    /**
+     * if via setExpectedparent method a expected
+     * plugin defined,if the current plugin
+     * matches to this type.
+     * @param \golibplugin\Plugin\Plugin $plugin
+     * @return boolean
+     */
     private function checkPluginType ( Plugin $plugin ) {
         if ($this->currentTypeExpected == NULL) {
             return true; // no check requested
@@ -151,6 +177,14 @@ abstract class Provider {
         return $plgResponse;
     }
 
+    /**
+     * parse the response and fill
+     * the PluginResponse
+     * @param mixed $response
+     * @param string $name
+     * @param \golibplugin\Plugin\Plugin $plugin
+     * @param \golibplugin\Plugin\PluginResponse $plgResponse
+     */
     private function handleResponse ( $response, $name, Plugin $plugin,
                                       PluginResponse $plgResponse ) {
         if (is_bool( $response )) {
@@ -162,6 +196,12 @@ abstract class Provider {
         $plgResponse->response[$name] = $response;
     }
 
+    /**
+     * register a plugin 
+     * @param \golibplugin\Plugin\Plugin $plugin
+     * @param type $name
+     * @throws \Exception
+     */
     public function registerPlugin ( Plugin $plugin, $name = NULL ) {
         if ($name == NULL || !is_string( $name )) {
             $name = $plugin->getName();
