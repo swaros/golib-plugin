@@ -1,5 +1,5 @@
 {
-    "name": "gorgo/golib-plugin",
+    "name": "gorgo/golibplugin",
     "description": "Plugin Provider for modular PHP development.",
     "keywords": ["plugins", "moduls"],
     "homepage": "https://github.com/swaros/golib-plugin",
@@ -17,7 +17,7 @@
     },
     "autoload": {
         "psr-4": {
-            "golib-plugin\\": "src/"
+            "golibplugin\\": "src/"
         }
     }
 }

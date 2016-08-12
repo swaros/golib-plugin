@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c2d07315014e9924ccb257cee9166b97",
-    "content-hash": "a47227b138c1503622e7a10eb6b88314",
+    "hash": "1237751ea04b8b1590ee644986c2f087",
+    "content-hash": "bfad3980ae476da6d250594e800f432c",
     "packages": [
         {
             "name": "gorgo/golib",
