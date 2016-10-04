@@ -42,6 +42,26 @@ abstract class Provider {
     private $currentTypeExpected = NULL;
 
     /**
+     * registers a static plugin if they not allready registered.
+     * this plugin have to be a static plugin.
+     * @param \golibplugin\Plugin\Plugin $plugin
+     * @param type $name
+     * @return boolean
+     */
+    public static function registerStaticPluginOnce ( Plugin $plugin,
+                                                      $name = null ) {
+        if ($name == NULL || !is_string( $name )) {
+            $name = $plugin->getName();
+        }
+        if (isset( self::$staticPlugins[$name] )) {
+            return false;
+        }
+
+        self::registerStaticPlugin( $plugin, $name );
+        return true;
+    }
+
+    /**
      * Registers a static Plugin. This Plugin MUST
      * BE DEFINED AS STATIC.
      * @param \golibplugin\Plugin\Plugin $plugin the plugin himself
@@ -197,7 +217,7 @@ abstract class Provider {
     }
 
     /**
-     * register a plugin 
+     * register a plugin
      * @param \golibplugin\Plugin\Plugin $plugin
      * @param type $name
      * @throws \Exception
