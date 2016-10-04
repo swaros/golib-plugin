@@ -164,6 +164,21 @@ abstract class Provider {
     }
 
     /**
+     * get a registered Plugin by name
+     * @param type $name
+     * @return Plugin
+     */
+    public function getPlugin ( $name ) {
+        if (isset( $this->plugins[$name] )) {
+            return $this->plugins[$name];
+        }
+
+        if (isset( self::$staticPlugins[$name] )) {
+            return self::$staticPlugins[$name];
+        }
+    }
+
+    /**
      * executes allplugins and returns
      * containerthat collects allreturn values
      * @param type $methodName
