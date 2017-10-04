@@ -4,58 +4,13 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "1237751ea04b8b1590ee644986c2f087",
-    "content-hash": "bfad3980ae476da6d250594e800f432c",
-    "packages": [
-        {
-            "name": "gorgo/golib",
-            "version": "dev-master",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/swaros/golib.git",
-                "reference": "de7913b2ba24fb6b6b93acfb2109cf17a2112472"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/swaros/golib/zipball/de7913b2ba24fb6b6b93acfb2109cf17a2112472",
-                "reference": "de7913b2ba24fb6b6b93acfb2109cf17a2112472",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=5.3.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "golib\\": "src/"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "authors": [
-                {
-                    "name": "Thomas Ziegler",
-                    "email": "tziegler@googlemail.com"
-                }
-            ],
-            "description": "shared php tools lib.",
-            "homepage": "https://github.com/swaros/golib",
-            "keywords": [
-                "enum",
-                "enums",
-                "properties"
-            ],
-            "time": "2016-07-08 09:23:15"
-        }
-    ],
+    "hash": "6713fa12a7941325c1f87e070a4ea93c",
+    "content-hash": "2f9ff65e710e788663142bfeaec907a4",
+    "packages": [],
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "gorgo/golib": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
